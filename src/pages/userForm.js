@@ -4,7 +4,7 @@ import Input from "@mui/material/Input";
 import Button from "@mui/material/Button";
 
 import "./userForm.css";
-import moment, { now } from "moment";
+import moment from "moment";
 
 function UserForm() {
   //fetching and updating public holiday array state from publicHoliday.json file
@@ -93,16 +93,20 @@ function UserForm() {
 
   //handle Submit click
   function handleSubmit() {
+    //first check
     if (isChronological(start, end)) {
       alert(
         "End date cannot be later than start date, please check input dates!!!"
       );
     }
+    //second check
     if (isAllowedHoliday(totalHolidays)) {
       alert(
         "the total number of holiday exceeds allowed Holiday quota, please check you dates !!!"
       );
     }
+    //third check
+
     if (isSameAnnualYear(userInputDate.startDate, userInputDate.endDate)) {
       alert(
         "Holiday can only be taken with same annual year, please check your dates!!!"
