@@ -97,8 +97,8 @@ function UserForm() {
   };
   //handle Submit click
   function handleSubmit() {
+    //setting teh totalHoliday state here
     const totalHolidays = updateHoliday();
-
     setTotalHolidays(totalHolidays);
 
     //first check
