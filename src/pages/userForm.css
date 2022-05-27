@@ -21,3 +21,9 @@
 .label {
   display: block;
 }
+.outputDaysHide {
+  display: none;
+}
+.outputDaysShow {
+  display: block;
+}

@@ -24,7 +24,7 @@ function UserForm() {
 
   //check if the dates are in chronological order(end date is later than start date)
   const isChronological = (startDate, endDate) => {
-    return startDate > endDate;
+    return startDate > endDate || startDate !== endDate;
   };
   // check if max number of holiday allowed is within limit
   const isAllowedHoliday = (noOfDays) => {
@@ -156,7 +156,7 @@ function UserForm() {
         </Button>
       </div>
 
-      <div>
+      <div className={totalHolidays <= 0 ? "outputDaysHide" : "outputDaysShow"}>
         Your total no of selected Days excluding public holidays and Sundays is
         : {totalHolidays} days
       </div>
