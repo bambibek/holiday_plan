@@ -17,6 +17,7 @@ function UserForm() {
   });
   //state to manage/calculate total no of allowed holidays
   const [totalHolidays, setTotalHolidays] = useState(0);
+  // debugger;
 
   const start = new Date(userInputDate.startDate);
   const end = new Date(userInputDate.endDate);
@@ -90,9 +91,16 @@ function UserForm() {
       [e.target.name]: e.target.value,
     }));
   };
-
+  //total holiday get passing values
+  const updateHoliday = () => {
+    return getTotalHolidays(userInputDate.startDate, userInputDate.endDate);
+  };
   //handle Submit click
   function handleSubmit() {
+    const totalHolidays = updateHoliday();
+
+    setTotalHolidays(totalHolidays);
+
     //first check
     if (isChronological(start, end)) {
       alert(
@@ -112,11 +120,6 @@ function UserForm() {
         "Holiday can only be taken with same annual year, please check your dates!!!"
       );
     }
-
-    //setting total holiday number
-    setTotalHolidays(
-      getTotalHolidays(userInputDate.startDate, userInputDate.endDate)
-    );
   }
 
   return (
@@ -152,7 +155,11 @@ function UserForm() {
           SUBMIT
         </Button>
       </div>
-      <div> Your total no of usable holiday is : {totalHolidays} days</div>
+
+      <div>
+        Your total no of selected Days excluding public holidays and Sundays is
+        : {totalHolidays} days
+      </div>
     </>
   );
 }
