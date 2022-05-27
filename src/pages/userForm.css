@@ -1,0 +1,23 @@
+.para {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: x-large;
+  color: burlywood;
+}
+
+.container {
+  /* border: 1px solid black; */
+  /* width: 300px; */
+  height: 20vh;
+  /* margin: auto; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input {
+  display: block;
+  margin: 20px;
+}
+.label {
+  display: block;
+}
