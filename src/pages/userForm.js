@@ -104,7 +104,7 @@ function UserForm() {
     //first check
     if (isChronological(start, end)) {
       alert(
-        "End date cannot be later than start date, please check input dates!!!"
+        "End date cannot be later than  or equal to start date, please check input dates!!!"
       );
     }
     //second check
