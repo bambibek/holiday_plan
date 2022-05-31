@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 
 import "./userForm.css";
 import moment from "moment";
+// import usePublicHoliday from "../components/usePublicHoliday";
 
 function UserForm() {
   //fetching and updating public holiday array state from publicHoliday.json file
@@ -24,7 +25,7 @@ function UserForm() {
 
   //check if the dates are in chronological order(end date is later than start date)
   const isChronological = (startDate, endDate) => {
-    return startDate > endDate || startDate !== endDate;
+    return startDate > endDate;
   };
   // check if max number of holiday allowed is within limit
   const isAllowedHoliday = (noOfDays) => {
@@ -97,14 +98,14 @@ function UserForm() {
   };
   //handle Submit click
   function handleSubmit() {
-    //setting teh totalHoliday state here
+    //setting the totalHoliday state here
     const totalHolidays = updateHoliday();
     setTotalHolidays(totalHolidays);
 
     //first check
     if (isChronological(start, end)) {
       alert(
-        "End date cannot be later than  or equal to start date, please check input dates!!!"
+        "End date cannot be later than start date, please check input dates!!!"
       );
     }
     //second check

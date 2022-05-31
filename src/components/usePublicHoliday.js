@@ -19,5 +19,7 @@ const usePublicHoliday = () => {
     }
   }, []);
 
-  console.log(publicHoliday);
+  // console.log(publicHoliday);
 };
+
+export default usePublicHoliday;
